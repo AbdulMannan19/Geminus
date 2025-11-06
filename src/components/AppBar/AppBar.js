@@ -27,12 +27,7 @@ function AppBar({ onNavigateToProfile, onNavigateToHome, onNavigate, currentPage
                 >
                   AI Assistant
                 </button>
-                <button 
-                  className={`nav-btn ${currentPage === 'diagnostics' ? 'active' : ''}`}
-                  onClick={() => onNavigate('diagnostics')}
-                >
-                  Diagnostics
-                </button>
+
                 <button 
                   className={`nav-btn ${currentPage === 'flash-tests' ? 'active' : ''}`}
                   onClick={() => onNavigate('flash-tests')}

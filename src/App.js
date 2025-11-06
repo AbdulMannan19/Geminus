@@ -5,7 +5,6 @@ import Login from './pages/Login/Login';
 import Home from './pages/Home/Home';
 import Profile from './pages/Profile/Profile';
 import AIAssistant from './pages/AIAssistant/AIAssistant';
-import Diagnostics from './pages/Diagnostics/Diagnostics';
 import FlashTests from './pages/FlashTests/FlashTests';
 
 function App() {
@@ -81,8 +80,6 @@ function App() {
         return <Profile />;
       case 'ai-assistant':
         return <AIAssistant />;
-      case 'diagnostics':
-        return <Diagnostics />;
       case 'flash-tests':
         return <FlashTests />;
       case 'home':

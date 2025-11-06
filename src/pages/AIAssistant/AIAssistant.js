@@ -19,16 +19,33 @@ function AIAssistant() {
           </div>
         </div>
 
-        <div className="ai-guidance">
-          <h3>🎯 AI Guidance</h3>
-          <div className="guidance-box">
-            <p>Click "Start Camera" to begin real-time AI assistance</p>
-            <ul>
-              <li>🚦 Traffic sign recognition</li>
-              <li>🚗 Vehicle detection and warnings</li>
-              <li>🛣️ Lane guidance</li>
-              <li>⚠️ Hazard alerts</li>
-            </ul>
+        <div className="stats-grid">
+          <div className="stat-card">
+            <div className="stat-icon">🔄</div>
+            <h3>Sharp Turns</h3>
+            <div className="stat-number">12</div>
+            <p>Detected this week</p>
+          </div>
+
+          <div className="stat-card">
+            <div className="stat-icon">🛑</div>
+            <h3>Sudden Brakes</h3>
+            <div className="stat-number">8</div>
+            <p>Emergency stops detected</p>
+          </div>
+
+          <div className="stat-card">
+            <div className="stat-icon">📱</div>
+            <h3>Phone Usage</h3>
+            <div className="stat-number">45m</div>
+            <p>Total time while driving</p>
+          </div>
+
+          <div className="stat-card">
+            <div className="stat-icon">⏱️</div>
+            <h3>Drive Time</h3>
+            <div className="stat-number">8.5h</div>
+            <p>This week</p>
           </div>
         </div>
       </div>
