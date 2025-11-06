@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import AppBar from './components/AppBar/AppBar';
 import Login from './pages/Login/Login';
 import Home from './pages/Home/Home';
+import Profile from './pages/Profile/Profile';
 
 function App() {
   const { isAuthenticated, isLoading } = useAuth0();
+  const [currentPage, setCurrentPage] = useState('home');
 
   // Inject global styles
   React.useEffect(() => {
@@ -58,14 +60,32 @@ function App() {
     );
   }
 
+  const handleNavigateToProfile = () => {
+    setCurrentPage('profile');
+  };
+
+  const handleNavigateToHome = () => {
+    setCurrentPage('home');
+  };
+
+  const renderCurrentPage = () => {
+    switch (currentPage) {
+      case 'profile':
+        return <Profile />;
+      case 'home':
+      default:
+        return <Home />;
+    }
+  };
+
   return (
     <div style={{ minHeight: '100vh' }}>
       {!isAuthenticated ? (
         <Login />
       ) : (
         <>
-          <AppBar />
-          <Home />
+          <AppBar onNavigateToProfile={handleNavigateToProfile} onNavigateToHome={handleNavigateToHome} />
+          {renderCurrentPage()}
         </>
       )}
     </div>
