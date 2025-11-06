@@ -1,26 +1,72 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import AppBar from './components/AppBar/AppBar';
+import Login from './pages/Login/Login';
+import Home from './pages/Home/Home';
 
 function App() {
-  const { loginWithRedirect, logout, user, isAuthenticated, isLoading } = useAuth0();
+  const { isAuthenticated, isLoading } = useAuth0();
 
-  if (isLoading) return <div>Loading...</div>;
+  // Inject global styles
+  React.useEffect(() => {
+    const styles = `
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .loading-container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+      }
+
+      .loading-text {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+      }
+    `;
+    
+    const styleElement = document.createElement('style');
+    styleElement.textContent = styles;
+    document.head.appendChild(styleElement);
+    
+    return () => {
+      if (document.head.contains(styleElement)) {
+        document.head.removeChild(styleElement);
+      }
+    };
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="loading-container">
+        <div>Loading Geminus...</div>
+      </div>
+    );
+  }
 
   return (
-    <div>
-      <h1>Minimal OAuth Login</h1>
+    <div style={{ minHeight: '100vh' }}>
       {!isAuthenticated ? (
-        <button onClick={() => loginWithRedirect()}>
-          Log In
-        </button>
+        <Login />
       ) : (
-        <div>
-          <h2>Welcome, {user.name}!</h2>
-          <p>Email: {user.email}</p>
-          <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
-            Log Out
-          </button>
-        </div>
+        <>
+          <AppBar />
+          <Home />
+        </>
       )}
     </div>
   );
