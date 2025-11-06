@@ -1,0 +1,111 @@
+.ai-assistant-container {
+  min-height: calc(100vh - 80px);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+}
+
+.ai-assistant-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.ai-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 3rem;
+}
+
+.ai-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.ai-header p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+.camera-section {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.camera-placeholder {
+  text-align: center;
+  padding: 3rem;
+  border: 3px dashed #ddd;
+  border-radius: 12px;
+  background: #f8f9fa;
+}
+
+.camera-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.camera-placeholder h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.camera-placeholder p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.start-camera-btn {
+  background: linear-gradient(135deg, #4285f4 0%, #34a853 50%, #ea4335 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.start-camera-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.ai-guidance {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.ai-guidance h3 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.guidance-box {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #4285f4;
+}
+
+.guidance-box p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.guidance-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.guidance-box li {
+  color: #333;
+  padding: 0.5rem 0;
+  font-weight: 500;
+}

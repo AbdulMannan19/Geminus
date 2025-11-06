@@ -4,6 +4,9 @@ import AppBar from './components/AppBar/AppBar';
 import Login from './pages/Login/Login';
 import Home from './pages/Home/Home';
 import Profile from './pages/Profile/Profile';
+import AIAssistant from './pages/AIAssistant/AIAssistant';
+import Diagnostics from './pages/Diagnostics/Diagnostics';
+import FlashTests from './pages/FlashTests/FlashTests';
 
 function App() {
   const { isAuthenticated, isLoading } = useAuth0();
@@ -68,10 +71,20 @@ function App() {
     setCurrentPage('home');
   };
 
+  const handleNavigate = (page) => {
+    setCurrentPage(page);
+  };
+
   const renderCurrentPage = () => {
     switch (currentPage) {
       case 'profile':
         return <Profile />;
+      case 'ai-assistant':
+        return <AIAssistant />;
+      case 'diagnostics':
+        return <Diagnostics />;
+      case 'flash-tests':
+        return <FlashTests />;
       case 'home':
       default:
         return <Home />;
@@ -84,7 +97,12 @@ function App() {
         <Login />
       ) : (
         <>
-          <AppBar onNavigateToProfile={handleNavigateToProfile} onNavigateToHome={handleNavigateToHome} />
+          <AppBar 
+            onNavigateToProfile={handleNavigateToProfile} 
+            onNavigateToHome={handleNavigateToHome}
+            onNavigate={handleNavigate}
+            currentPage={currentPage}
+          />
           {renderCurrentPage()}
         </>
       )}

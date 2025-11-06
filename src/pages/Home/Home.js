@@ -7,51 +7,37 @@ function Home() {
 
   return (
     <div className="home-container">
-      <div className="welcome-section">
-        <h1 className="welcome-title">Welcome back, {user.name}!</h1>
-        <p className="welcome-subtitle">Ready to explore with Geminus?</p>
-      </div>
-      
-      <div className="user-info-card">
-        <div className="user-avatar">
-          {user.picture ? (
-            <img src={user.picture} alt="Profile" className="avatar-img" />
-          ) : (
-            <div className="avatar-placeholder">
-              {user.name?.charAt(0).toUpperCase()}
+      <div className="hero-section">
+        <div className="hero-content">
+          <h1 className="hero-title">
+            <span className="gradient-text">Gemini Powered</span><br/>
+            Driving Assistant
+          </h1>
+          
+          <p className="hero-subtitle">
+            Experience the future of safe driving with AI-powered real-time guidance, 
+            intelligent diagnostics, and interactive learning powered by Google's Gemini AI
+          </p>
+          
+          <div className="features-grid">
+            <div className="feature-card ai">
+              <div className="feature-icon">🤖</div>
+              <h3>Real-time AI Guidance</h3>
+              <p>Camera-based traffic analysis with instant voice guidance for safer driving decisions</p>
             </div>
-          )}
-        </div>
-        
-        <div className="user-details">
-          <h3>{user.name}</h3>
-          <p>{user.email}</p>
-        </div>
-      </div>
-      
-      <div className="features-grid">
-        <div className="feature-card">
-          <div className="feature-icon blue">🤖</div>
-          <h3>AI Assistant</h3>
-          <p>Get help with your daily tasks</p>
-        </div>
-        
-        <div className="feature-card">
-          <div className="feature-icon red">💬</div>
-          <h3>Smart Chat</h3>
-          <p>Conversational AI at your fingertips</p>
-        </div>
-        
-        <div className="feature-card">
-          <div className="feature-icon yellow">⚡</div>
-          <h3>Quick Actions</h3>
-          <p>Streamline your workflow</p>
-        </div>
-        
-        <div className="feature-card">
-          <div className="feature-icon green">📊</div>
-          <h3>Analytics</h3>
-          <p>Track your productivity</p>
+            
+            <div className="feature-card diagnostics">
+              <div className="feature-icon">📊</div>
+              <h3>Smart Diagnostics</h3>
+              <p>AI-powered analysis of driving patterns, phone usage, and safety metrics</p>
+            </div>
+            
+            <div className="feature-card learning">
+              <div className="feature-icon">⚡</div>
+              <h3>Interactive Learning</h3>
+              <p>Gamified traffic sign quizzes powered by Gemini for new driver education</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

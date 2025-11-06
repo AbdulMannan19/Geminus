@@ -1,0 +1,169 @@
+.flash-tests-container {
+  min-height: calc(100vh - 80px);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+}
+
+.flash-tests-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.flash-header {
+  text-align: center;
+  color: #333;
+  margin-bottom: 3rem;
+}
+
+.flash-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.flash-header p {
+  font-size: 1.3rem;
+  opacity: 0.8;
+}
+
+.quiz-section {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4285f4, #34a853);
+  transition: width 0.3s ease;
+}
+
+.question-card {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sign-display {
+  font-size: 8rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.question-card h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.option-btn {
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  padding: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.option-btn:hover {
+  background: #4285f4;
+  color: white;
+  border-color: #4285f4;
+  transform: translateY(-2px);
+}
+
+.quiz-info {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  font-weight: 500;
+}
+
+.result-section {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.result-card h2 {
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.final-score {
+  margin-bottom: 2rem;
+}
+
+.score-text {
+  display: block;
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.score-number {
+  display: block;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #4285f4;
+  margin-bottom: 0.5rem;
+}
+
+.score-percentage {
+  display: block;
+  font-size: 1.5rem;
+  color: #34a853;
+  font-weight: 600;
+}
+
+.performance {
+  margin-bottom: 2rem;
+}
+
+.performance p {
+  font-size: 1.3rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.retry-btn {
+  background: linear-gradient(135deg, #4285f4 0%, #34a853 50%, #ea4335 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.retry-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}

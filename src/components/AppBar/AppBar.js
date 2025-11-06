@@ -2,7 +2,7 @@ import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import './AppBar.css';
 
-function AppBar({ onNavigateToProfile, onNavigateToHome }) {
+function AppBar({ onNavigateToProfile, onNavigateToHome, onNavigate, currentPage }) {
   const { logout, user, isAuthenticated } = useAuth0();
 
   return (
@@ -12,7 +12,36 @@ function AppBar({ onNavigateToProfile, onNavigateToHome }) {
           <h1 className="app-title" onClick={onNavigateToHome}>Geminus</h1>
         </div>
         {isAuthenticated && (
-          <div className="appbar-right">
+          <>
+            <div className="appbar-center">
+              <nav className="nav-menu">
+                <button 
+                  className={`nav-btn ${currentPage === 'home' ? 'active' : ''}`}
+                  onClick={() => onNavigate('home')}
+                >
+                  Home
+                </button>
+                <button 
+                  className={`nav-btn ${currentPage === 'ai-assistant' ? 'active' : ''}`}
+                  onClick={() => onNavigate('ai-assistant')}
+                >
+                  AI Assistant
+                </button>
+                <button 
+                  className={`nav-btn ${currentPage === 'diagnostics' ? 'active' : ''}`}
+                  onClick={() => onNavigate('diagnostics')}
+                >
+                  Diagnostics
+                </button>
+                <button 
+                  className={`nav-btn ${currentPage === 'flash-tests' ? 'active' : ''}`}
+                  onClick={() => onNavigate('flash-tests')}
+                >
+                  Flash Tests
+                </button>
+              </nav>
+            </div>
+            <div className="appbar-right">
             <button 
               className="logout-btn"
               onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
@@ -33,6 +62,7 @@ function AppBar({ onNavigateToProfile, onNavigateToHome }) {
               )}
             </button>
           </div>
+          </>
         )}
       </div>
     </div>
